@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
-const Student = require('./models/student');
-var ObjectId = require('mongodb').ObjectId
-//const routes = require('./routes');
 
 const app = express();
 
