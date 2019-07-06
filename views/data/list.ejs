@@ -1,0 +1,33 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body text-center">
+        <h1><i class="fab fa-node-js fa-3x"></i></h1>
+        <p>List of Student's Data</p>
+        <a href="/" class="btn btn-primary">Home</a>
+        <a href="/student/list" class="btn btn-secondary">Back</a>
+        
+      </div>
+      
+      <div class="card">
+        <ul>
+            <ol></ol>
+            <ol><%= `Student: ${student.firstName} ${student.lastName}`%></ol>
+            <ol><%= `Teacher: ${student.teacher}`%></ol>
+            <ol><%= `District: ${student.district}`%></ol>
+            <ol>Behaviors: <% for(var behavior of student.behavior) { %> <%= behavior.name%>, <% } %></ol>
+        </ul>
+      </div>
+      
+      <% for(var log of logs) { %>
+        <div class="card">
+          <ol><%= log.date %>
+          <a href='/data/view/<%= student._id %>/<%= log._id %>'>View Data</a>&nbsp &nbsp
+          <a href='/data/view/<%= student._id %>'>Edit Data</a>&nbsp &nbsp
+          <a href='/data/delete/<%= student._id %>/<%= log._id %>'>Delete</a>&nbsp &nbsp
+          </ol>
+        </div>
+      <% } %>
+
+      <ol><a href='/data/add/<%= student._id %>' class="btn btn-primary">Add Data</a>&nbsp &nbsp</ol>
+  </div>
+</div>

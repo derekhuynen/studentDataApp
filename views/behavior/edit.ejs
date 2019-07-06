@@ -1,0 +1,51 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body text-center">
+      <h1><i class="fab fa-node-js fa-3x"></i></h1>
+      <p>Add Behavior</p>
+      <a href="/" class="btn btn-primary">Home</a>
+      <a href="/student/edit/<%= student._id %>" class="btn btn-secondary">Back</a>
+    </div>
+    <div class="card card-body text-center">
+      <ul>
+        
+        <ol><%= `Student: ${student.firstName} ${student.lastName} `%></ol>
+         Behaviors: <% for(var behavior of student.behavior) { %>
+        <div>
+          <form action="/behavior/edit/<%= student._id %>/<%= behavior._id %>" method="POST">
+            <div class="form-group text-left">
+              <label for= "<%= behavior.id %>" ><%= behavior.name %></label>
+              <input
+                type="behavior"
+                id="behavior"
+                name="behavior"
+                class="form-control"
+                value="<%= behavior.name %>"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Edit Behavior</button>
+          </form>
+          <div>
+            <a href='/behavior/delete/<%= student._id %>/<%= behavior._id %>'>Delete</a>
+          </div>
+          <% } %>
+        </div>
+          <div>
+            <form action="/behavior/add/<%= student._id %>" method="POST">
+              <div class="form-group">
+                <label for="behavior">Behavior</label>
+                <input
+                 type="behavior"
+                  id="behavior"
+                  name="behavior"
+                  class="form-control"npm
+                  placeholder="behavior"
+                />
+              </div>
+            <button type="submit" class="btn btn-primary btn-block">Add Behavior</button>
+          </form>
+        </div>
+      </ul>   
+    </div> 
+  </div>
+</div>

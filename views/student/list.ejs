@@ -1,0 +1,28 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body text-center">
+        <h1><i class="fab fa-node-js fa-3x"></i></h1>
+        <p>Edit New User</p>
+        <a href="/" class="btn btn-primary">Home</a>
+        <a href="/student/new" class="btn btn-secondary">Add New student</a>
+        
+      </div>
+      <% for(var student of students) { %>
+      <div class="card card-body text-left">
+        <ul>
+            <ol><%= `Student: ${student.firstName} ${student.lastName}`%></ol>
+            <ol><%= `Teacher: ${student.teacher}`%></ol>
+            <ol><%= `District: ${student.district}`%></ol>
+            <ol>Behaviors: <% for(var behavior of student.behavior) { %> <%= behavior.name%>, <% } %></ol> 
+        </ul>
+        <div class="text-center">        
+          <ul>
+            <ol><a href='/data/add/<%= student._id %>'>Add Data</a>&nbsp &nbsp</ol>
+            <ol><a href='/data/list/<%= student._id %>'>List Data</a>&nbsp &nbsp</ol>
+            <ol><a href='/student/edit/<%= student._id %>'>Edit Student</a>&nbsp &nbsp</ol>
+          </ul>
+        </div>
+      </div>
+      <% } %>
+  </div>
+</div>

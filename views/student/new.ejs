@@ -1,0 +1,52 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+      <a href="/" class="btn btn-primary">Home</a>
+      <a href="/student/list" class="btn btn-secondary">List Students</a>
+      <form action="/student/new" method="POST">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="firstName"
+            id="firstName"
+            name="firstName"
+            class="form-control"
+            placeholder="Enter First Name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            type="lastName"
+            id="lastName"
+            name="lastName"
+            class="form-control"
+            placeholder="Enter Last Name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="teacher">Teacher</label>
+          <input
+            type="teacher"
+            id="teacher"
+            name="teacher"
+            class="form-control"
+            placeholder="Enter Teacher Name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="district">District</label>
+          <input
+            type="district"
+            id="district"
+            name="district"
+            class="form-control"
+            placeholder="Enter District Name"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create New</button>
+      </form>
+    </div>
+  </div>
+</div>

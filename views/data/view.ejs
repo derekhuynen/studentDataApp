@@ -1,0 +1,35 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body text-center">
+      <h1><i class="fab fa-node-js fa-3x"></i></h1>
+        <p>View Data</p>
+        <a href="/" class="btn btn-primary">Home</a>
+        <a href="/data/list/<%= student._id %>" class="btn btn-secondary">Back</a>
+      </div>
+  </div>
+</div>
+
+
+<table style="width:100%">
+  <div>  
+      <tr>
+        <th><%= `${student.firstName} ${student.lastName} `%></th>
+        <% for(var behavior of student.behavior) { %>
+        <th> <%= behavior.name %> </th>
+         <% } %>
+      </tr>
+      <% let runningCount = 0; %>
+      <% for(var time of array) { %>
+        <tr>
+          <th><%= time %></th>
+          <% for(var behavior of log.behaviors) { %>
+            <th><%= log.behavior[runningCount].count %> </th>
+            <% runningCount++ %>
+          <% } %>
+        </tr>
+      <% } %>
+    <% runningCount = 0; %>
+  </div>      
+</table>
+
+
