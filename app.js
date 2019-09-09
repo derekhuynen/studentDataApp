@@ -33,6 +33,6 @@ app.use('/data', require('./routes/data.js'));
 
 
 //Start Server
-app.listen(4000, () => console.log('Example app listening on port 4000!'));
+app.listen(4000, () => console.log('App Started on port:4000'));
 
 module.exports = router;
